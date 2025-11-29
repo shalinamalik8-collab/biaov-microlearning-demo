@@ -1,0 +1,142 @@
+:root {
+  --green-dark: #1b5e20;
+  --green-light: #e4f3e8;
+  --bg: #f4f7f5;
+  --text-main: #222;
+  --text-muted: #555;
+  --card-bg: #ffffff;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Skip link (WCAG 2.4.1) */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+  border-radius: 6px;
+}
+
+/* Header */
+header {
+  background: var(--green-dark);
+  color: #fff;
+  padding: 1.8rem 1.2rem;
+}
+
+header h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+}
+
+/* Main */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1.2rem 3rem;
+}
+
+/* Badges & Headings */
+.badge {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  background: var(--green-light);
+  color: var(--green-dark);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+h2 {
+  color: var(--green-dark);
+  font-size: 1.35rem;
+  margin-top: 1.6rem;
+}
+
+/* Muted text */
+.muted {
+  color: var(--text-muted);
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  border: 1px solid #ddd;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+/* Grids */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+/* Checklist */
+.check-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.check-list li::before {
+  content: "✔ ";
+  color: var(--green-dark);
+  font-weight: bold;
+  margin-right: 0.4rem;
+}
+
+/* Expandable sections */
+details {
+  border-radius: var(--radius);
+  border: 1px solid #ddd;
+  background: var(--card-bg);
+  padding: 0.75rem 1rem;
+  margin-top: 0.7rem;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+summary:focus-visible {
+  outline: 3px solid var(--green-dark);
+}
+
+/* Reflection box */
+.reflection-box {
+  background: var(--green-light);
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius);
+  margin-top: 0.6rem;
+}
